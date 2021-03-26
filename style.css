@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#gridcontainer10{
+	height: 30vw;
+	width: 30vw;
+	min-width: 500px;
+	min-height: 500px;
+	display: grid;
+	grid-template-columns: 3fr repeat(10, 1fr);
+	grid-template-rows: 3fr repeat(10, 1fr);
+}
+
+#gridcontainer10 div{
+	border: 1px solid gray;
+}
+
+#gridcontainer15{
+	height: 40vw;
+	width: 40vw;
+	min-width: 600px;
+	min-height: 600px;
+	display: grid;
+	grid-template-columns: 3fr repeat(15, 1fr);
+	grid-template-rows: 3fr repeat(15, 1fr);
+}
+
+#gridcontainer15 div{
+	border: 1px solid gray;
+}
+
+textarea{
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	resize: none;
+}
