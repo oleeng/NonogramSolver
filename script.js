@@ -1,4 +1,6 @@
 var debug = false
+var timeout = 10000
+var starttime = null
 
 function create(){
 	let container = document.getElementById("container")
@@ -75,6 +77,7 @@ function solve(){
 			matrix[i][j] = ""
 		}
 	}
+	starttime = Date.now()
 	if(!solveIntern(matrix, rows, columns, 0, 0)){
 		console.log("Keine Lösung gefunden!")
 	}
@@ -162,6 +165,10 @@ function checkMatrix(matrix, rows, columns){
 }
 
 function solveIntern(matrix, rows, columns, i, j){
+	if(Date.now() - starttime > timeout){
+		alert("timeout da ausführung länger als 10s dauerte")
+		throw "TIMEOUT"
+	}
 	if(j == matrix.length){
 		console.log("Lösung gefunden!")
 		prettyPrintMatrix(matrix)
