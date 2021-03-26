@@ -226,6 +226,9 @@ function prettyPrintMatrix(matrix){
 	let result = ""
 	for(rowIndex in matrix){
 		for(columnIndex in matrix){
+			if(matrix[rowIndex][columnIndex] == "+"){
+				document.getElementById("cell_"+rowIndex+"_"+columnIndex).classList.add("filled")
+			}
 			result += matrix[rowIndex][columnIndex]
 		}
 		result += "\n"
